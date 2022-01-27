@@ -1,0 +1,72 @@
+body {
+	font-family: Arial;
+	font-size: 16px;
+	color: #EFA31F;
+	background-color: #000000;
+}
+
+.galeria {
+	/* fondo rojizo */
+	background-color: #DD5E1E;
+	/* altura de nuestro div */
+	height: 220px;
+	/* ancho de nuestro div */
+	width:290px;
+	/* Con margin establecemos el margen con el elemento superior y con auto nos lo centra en 
+		la pantalla. */
+	margin: 2em auto;
+	/* borde del div solido de color dorado */
+	border: 10px solid #FFC300;
+	/* La posicion del div galeria es relativa al cuerpo de la pagina html, es decir, del body. */
+	position: relative;
+}
+
+/* Ponemos todas la imagenes en la misma posicion absoluta, que tomara como referencia la relativa
+	de la clase galeria, luego con opacity las ocultamos */
+.galeria img {
+	position: absolute;
+	top:0;
+	left:0;
+	opacity:0;
+	transition:opacity 3s;
+	height: 170px;
+	width: 290px;
+}
+
+/* Definimos la posicion de los botones que sera relativa al div */
+.galeria input[type=radio]{
+	position:relative;
+	/* margen superior de 320px (siendo el total de nuestra galeria 350px, importante no 
+		sobrepasarlo para no superar los limites establecidos)  */
+	top: 190px;
+	/* margen izquierdo de 25px */
+	margin-left: 32px;
+}
+
+/* La pseudo-clase :nth-of-type() de CSS selecciona uno o más elementos de un tipo dado, 
+	en función de su posición entre un grupo de hermanos. */
+.galeria input[type=radio]:nth-of-type(1):checked ~ img:nth-of-type(1){
+	opacity:1;
+}
+/* Evalua que el input 2 este en checked, si es cierto selecciona la imagen en posicion 2 y
+	dentro mostramos su opacidad para que se muestre. */
+.galeria input[type=radio]:nth-of-type(2):checked ~ img:nth-of-type(2){
+	opacity:1;
+}
+
+.galeria input[type=radio]:nth-of-type(3):checked ~ img:nth-of-type(3){
+	opacity:1;
+}
+
+.galeria input[type=radio]:nth-of-type(4):checked ~ img:nth-of-type(4){
+	opacity:1;
+}
+
+.galeria input[type=radio]:nth-of-type(5):checked ~ img:nth-of-type(5){
+	opacity:1;
+}
+
+#cabecera1 h1{
+	margin:1em auto;
+	text-align:center;
+}
